@@ -8,9 +8,7 @@ botaoAdicionar.addEventListener("click", function(event){
     // extraindo inform
     var pacienteForm = obtemPacDoForm(form);
 
-    //cria a tr e a td do paciente
-    var pacienteTr = montaTr(pacienteForm);
-
+//valida paciente
     var erros = validaPaciente(pacienteForm);
     console.log(erros);
     if (erros.length > 0){
@@ -18,15 +16,19 @@ botaoAdicionar.addEventListener("click", function(event){
         return;
     }
 
-    //adicionando o paciente na tabela.
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(pacienteForm)
 
     form.reset();
     var mensagensErro = document.querySelector("#mensagem-erro");
     mensagensErro.innerHTML = "";
 })
+
+function adicionaPacienteNaTabela(pacienteForm) {
+    var pacienteTr = montaTr(pacienteForm);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 
 function exibeMensagemDeErro(erros){
     var ul = document.querySelector("#mensagem-erro");
