@@ -141,3 +141,26 @@ button[disabled=disabled], button:disabled {
 #mensagem-erro {
     color: red;
 }
+
+.fadeOut {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.filtro {
+	padding-left: 7px;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+#filtro {
+    width: 200px;
+    height: 35px;
+    margin: 5px 0 10px 0 ;
+	padding: 7px;
+	border-radius: 7px;
+}
+
+.invisivel{
+    display: none;
+}
